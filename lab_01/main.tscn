@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bijxathe3dq78"]
+
+[ext_resource type="PackedScene" uid="uid://bved5ydn78jhc" path="res://spirit.tscn" id="1_7lb3m"]
+[ext_resource type="Script" path="res://main.gd" id="1_ety8m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2mfh2"]
+font_size = 50
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0.913725, 0.419608, 0.658824, 0.858824)
+shadow_offset = Vector2(-10, -5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk55o"]
+size = Vector2(797, 57)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ety8m")
+Spirit = ExtResource("1_7lb3m")
+
+[node name="Label_Title" type="Label" parent="."]
+offset_left = 36.0
+offset_top = 28.0
+offset_right = 533.0
+offset_bottom = 97.0
+text = "H e l l o     W o r l d"
+label_settings = SubResource("LabelSettings_2mfh2")
+
+[node name="Label_Spirits_Count" type="Label" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 41.0
+offset_bottom = 22.0
+text = "1000"
+
+[node name="spirit" parent="." instance=ExtResource("1_7lb3m")]
+position = Vector2(605, 68)
+
+[node name="Fundo" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fundo"]
+position = Vector2(514.5, 597)
+scale = Vector2(1.01227, 0.821662)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fundo/StaticBody2D"]
+position = Vector2(-114.5, -25)
+shape = SubResource("RectangleShape2D_rk55o")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Fundo"]
+position = Vector2(-62, 515)
+rotation = 0.821396
+scale = Vector2(0.490464, 1.19534)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fundo/StaticBody2D2"]
+position = Vector2(-114.5, -25)
+shape = SubResource("RectangleShape2D_rk55o")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Fundo"]
+position = Vector2(910, 378)
+rotation = -1.04051
+scale = Vector2(0.490464, 1.19534)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fundo/StaticBody2D3"]
+position = Vector2(-114.5, -25)
+shape = SubResource("RectangleShape2D_rk55o")
